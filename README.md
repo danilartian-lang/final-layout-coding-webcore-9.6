@@ -1,3 +1,5 @@
+https://danilartian-lang.github.io/final-layout-coding-webcore-9.6/
+
 # Webpack Static Site Starter Kit
 
 ## Требования к проекту
