@@ -1,0 +1,68 @@
+@use "mixin" as *;
+@use "variables" as *;
+@use "fonts";
+
+
+.repair {
+  display: none;
+}
+
+.menu {
+  border-top: $border-top;
+  position: relative;
+
+  &__title {
+    font-weight: bold;
+    font-size: 28px;
+    padding-left: 16px;
+    padding-top: 24px;
+  }
+
+  &__title::before {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 40px;
+    background-color: #41f6d7;
+    left: 0px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  &-list {
+    padding-left: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    // margin-bottom: 24px;
+  }
+
+  &-list__card {
+    background-color: $primary-bg;
+    margin: 24px 16px;
+    width: auto;
+  }
+
+  &-list__link {
+    width: auto;
+    color: $text-color;
+    text-decoration: none;
+    &:hover{
+    border: 2px solid #B8FFEC;
+    border-radius: 12px;
+    padding: 8px
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .menu {
+    &-list.swiper{
+      overflow-x:scroll;
+      scrollbar-width: none;
+    }
+    &-list__card.swiper-slide {
+      width: auto;
+    }
+}
+}

@@ -1,0 +1,53 @@
+@use "mixin" as *;
+@use "variables" as *;
+@use "fonts";
+
+.footer {
+  @include flex-center;
+  flex-direction: column;
+  text-align: center;
+  border: $border-top;
+  margin-top: 40px;
+}
+
+.date {
+  color: $title-color;
+  margin: 16px 0;
+}
+
+.privacy {
+  @include flex-center;
+  flex-direction: column;
+  margin-bottom: 16px;
+  &__link {
+    color: $title-color;
+    text-decoration: none;
+  }
+}
+
+.info {
+  @include flex-center;
+  flex-direction: column;
+  color: $title-color;
+  margin-bottom: 16px;
+}
+
+
+@media (min-width: 768px){
+  .footer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 100px;
+    .date {
+      text-align: left;
+      margin-left: 16px;
+    }
+    .privacy {
+      text-align: center;
+    }
+    .info {
+      text-align: right;
+      margin-top: 40px;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@use "mixin" as *;
+@use "variables" as *;
+@use "fonts";
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'TT Lakes';
+  font-weight: 400;
+  background-color: $primary-bg;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: #ffffffe6;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.9s ease-in, visibility 0.5s ease-in;
+  &--active {
+    opacity: 0;
+    visibility: visible;
+  }
+}
+
+@media (min-width: 768px) {
+  .overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+}
+
+
+@media (min-width:1440px) {
+  body {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+   }
+}

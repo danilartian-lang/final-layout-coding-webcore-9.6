@@ -1,0 +1,142 @@
+@use "mixin" as *;
+@use "variables" as *;
+@use "fonts";
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-bg;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 20;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in;
+  &--active {
+    transform: translateX(0)
+  }
+
+  &__header {
+  @include flex-center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+  &__logo {
+  margin-left: 16px;
+  margin-right: auto;
+}
+
+  &__btn {
+  @include btn-icon;
+  @include flex-center;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+  &__menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-family: TT Lakes;
+  font-weight: 500;
+}
+
+  &__link {
+  margin-bottom: 24px;
+  color: $text-color;
+  text-decoration: none;
+  font-family: TT Lakes;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.5s ease-in-out;
+  &:hover::after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 24px;
+    background-color: #41f6d7;
+    left: -16px;
+    border-radius: 0 6px 6px 0;
+  }
+  &:hover {
+    color: $title-color;
+  }
+}
+
+  &__footer {
+  @include flex-center;
+  flex-direction:column;
+  align-items: start;
+  margin-bottom: 0;
+  margin-top: auto;
+}
+
+  &__action {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+
+  &__email {
+    font-weight: 500;
+    font-size: 16px;
+    color: $text-color;
+    text-decoration: none;
+  }
+
+  &__num {
+    font-weight: 700;
+    font-size: 24px;
+    text-decoration: none;
+    color: $text-color;
+  }
+}
+
+.btn__lang {
+  border: none;
+  font-size: 16px;
+  margin-right: 7px;
+  background-color: $secondary-bg;
+  cursor: pointer;
+  &--action {
+  color: #7e7e82;
+}
+}
+
+
+@media (min-width: 768px){
+  .sidebar {
+    width: 320px;
+    box-shadow: 15px 0px 15px #0E185033;
+  }
+}
+
+@media (min-width: 1440px) {
+  .sidebar {
+    display: flex;
+    position: static;
+    width: 320px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform: none;
+    box-shadow: none;
+    &__btn-burger {
+      display: none;
+    }
+    &__footer {
+     @include flex-center;
+    flex-direction:column;
+    align-items: start;
+    margin-bottom: 0;
+    margin-top: auto;
+    }
+  }
+}

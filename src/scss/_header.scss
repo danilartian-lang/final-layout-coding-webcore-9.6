@@ -1,0 +1,84 @@
+@use 'mixin' as *;
+@use 'variables' as *;
+@use 'fonts';
+
+.header {
+  @include flex-center;
+  height: 88px;
+  justify-content: space-between;
+  background-color: $secondary-bg;
+
+  &__left {
+    display: flex;
+    margin-left: 16px;
+  }
+
+  &__right {
+    margin-right: 16px;
+  }
+
+  &__button {
+    @include btn-icon;
+    cursor: pointer;
+  }
+
+  &__link {
+    margin-left: 16px;
+    margin-right: auto;
+  }
+
+  &__button--repair {
+    margin-right: 16px;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 32px;
+      background-color: $divider;
+      top: 5px;
+      left: -12px;
+    }
+  }
+}
+
+.header-as {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header {
+    &__link {
+      margin-left: 26px;
+      margin-right: auto;
+      position: relative;
+    }
+    &__button--open::after {
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 32px;
+      background-color: $divider;
+      top: 26px;
+      left: 70px;
+    }
+  }
+
+  .header-as {
+    display: flex;
+    margin-right: 30px;
+  }
+
+  .header__right {
+    display: flex;
+    margin-right: 25px;
+    .header__icon {
+      margin-left: 16px;
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .header {
+    display: none;
+  }
+}

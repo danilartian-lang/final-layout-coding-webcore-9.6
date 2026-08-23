@@ -1,0 +1,83 @@
+@use "mixin" as *;
+@use "variables" as *;
+@use "fonts";
+
+.main__info {
+  &-text--hidden {
+    display: none;
+  }
+  &-text {
+    padding-left: 16px;
+  }
+}
+
+.main__info-text--mobile {
+    display: none
+  }
+
+.main__info--expanded {
+  .main__info-text--hidden {
+    display: block;
+  }
+  .main__info-text--mobile {
+    display: none
+  }
+}
+
+.main__info .btn-expand {
+  @include flex-center;
+  background-color: $primary-bg;
+  border: none;
+  padding: 16px 16px;
+  cursor: pointer;
+  font-family: 'TT Lakes';
+  &__icon {
+    padding-right: 8px;
+  }
+  &__text {
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+.main__info-pic {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .main__info-text--mobile {
+    display: block;
+  }
+  .main__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1440px){
+  .menu__title {
+    position: relative;
+  }
+
+  .repair {
+    @include flex-center;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
+  .repair__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: $primary-bg;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .repair__btn--text {
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+}

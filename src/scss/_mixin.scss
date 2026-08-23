@@ -1,0 +1,21 @@
+@use "variables" as *;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin brand__item-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $secondary-bg;
+  border: $btn-border;
+}
+
+@mixin btn-icon {
+  background-color: #ffffff;
+  border: none;
+  
+}

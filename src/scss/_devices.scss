@@ -1,0 +1,98 @@
+@use "mixin" as *;
+@use "variables" as *;
+@use "fonts";
+
+.devices {
+  .btn-expand {
+    display: none;
+  }
+  &__title {
+    margin-left: 16px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+    background: $gradient-bg;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: $title-color;
+  }
+  &__item.swiper-slide {
+    width: 240px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $secondary-bg;
+    border: $btn-border;
+    border-radius: $border-radius;
+    margin-left: 16px;
+    margin-bottom: 42px;
+  }
+
+  &__item-title {
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-top: 16px;
+  }
+
+  &__link {
+    align-self: flex-end;
+    padding-right: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .devices{
+    .btn-expand {
+  @include flex-center;
+  background-color: $primary-bg;
+  border: none;
+  padding: 16px 16px;
+  cursor: pointer;
+  font-family: 'TT Lakes';
+  &__icon {
+    padding-right: 8px;
+  }
+  &__text {
+    font-weight: 500;
+    font-size: 16px;
+  }
+  }
+  .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .swiper-slide:nth-child(n+4) {
+    display: none;
+  }
+  .swiper-wrapper--expanded {
+    .swiper-slide{
+      display: flex;
+    }
+  }
+}
+}
+
+@media (min-width:1440px) {
+  .devices{
+    .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+  }
+    .swiper-slide:nth-child(n+4) {
+    display: flex;
+  }
+  .swiper-slide:nth-child(n+5) {
+    display: none;
+  }
+  .swiper-wrapper--expanded {
+    .swiper-slide{
+      display: flex;
+    }
+  }
+}
+}
