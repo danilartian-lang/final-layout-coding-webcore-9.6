@@ -3,6 +3,7 @@
 @use "fonts";
 
 .devices {
+  border-top: $border-top;
   .btn-expand {
     display: none;
   }
