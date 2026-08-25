@@ -11,7 +11,7 @@ const sidebar = document.querySelector('.sidebar')
 const overlay = document.querySelector('.overlay')
 
 const tabletQuery = window.matchMedia('(min-width:768px)')
-const desktopQuery = window.matchMedia('(min-width: 1120px)')
+const desktopQuery = window.matchMedia('(min-width: 1440px)')
 
 function openSidebar() {
   if (!desktopQuery.matches){
