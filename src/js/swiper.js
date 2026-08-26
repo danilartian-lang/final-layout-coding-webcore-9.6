@@ -5,33 +5,33 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 const mobileBreakpoint = window.matchMedia ('(min-width: 768px)');
-let menuInstance = undefined;
+// let menuInstance = undefined;
 
-function initOrDestroySwiper () {
-  if (mobileBreakpoint.matches) {
-    if (menuInstance !== undefined) {
-      menuInstance.destroy(true, true);
-      menuInstance = undefined;
-    }
-  } else {
-    if (menuInstance === undefined) {
-      menuInstance = new Swiper ('.menu-list', {
-        modules: [Pagination, Autoplay],
-        slidesPerView: 'auto',
-        loop: true,
-        autoplay: {
-          delay: 3000
-        },
-        // pagination: {
-        //   el: '.menu-list .swiper-pagination',
-        //   clickable: true,
-        // },
-      });
-    }
-  }
-}
-initOrDestroySwiper();
-mobileBreakpoint.addEventListener('change', initOrDestroySwiper);
+// function initOrDestroySwiper () {
+//   if (mobileBreakpoint.matches) {
+//     if (menuInstance !== undefined) {
+//       menuInstance.destroy(true, true);
+//       menuInstance = undefined;
+//     }
+//   } else {
+//     if (menuInstance === undefined) {
+//       menuInstance = new Swiper ('.menu-list', {
+//         modules: [Pagination, Autoplay],
+//         slidesPerView: 'auto',
+//         loop: true,
+//         autoplay: {
+//           delay: 3000
+//         },
+//         // pagination: {
+//         //   el: '.menu-list .swiper-pagination',
+//         //   clickable: true,
+//         // },
+//       });
+//     }
+//   }
+// }
+// initOrDestroySwiper();
+// mobileBreakpoint.addEventListener('change', initOrDestroySwiper);
 
 
 let brandsInstance = undefined;

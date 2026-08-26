@@ -6,7 +6,7 @@
   @include flex-center;
   flex-direction: column;
   text-align: center;
-  border: $border-top;
+  border-top: $border-top;
   margin-top: 40px;
 }
 
@@ -38,6 +38,8 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: 100px;
+    grid-area: 2/2/2/3;
+    padding: 10px 20px;
     .date {
       text-align: left;
       margin-left: 16px;

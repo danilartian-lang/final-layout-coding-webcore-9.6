@@ -31,16 +31,16 @@
   &-list {
     padding-left: 16px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    // margin-bottom: 24px;
+    overflow-x:scroll;
+    scrollbar-width: none;
   }
 
   &-list__card {
     background-color: $primary-bg;
     margin: 24px 16px;
     width: auto;
+    flex: none;
   }
 
   &-list__link {

@@ -46,14 +46,21 @@
 }
 
 @media (min-width: 768px) {
-  .main__info-text--mobile {
-    display: block;
-  }
   .main__info {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-
+   .main__info-text--mobile {
+    display: block;
+    margin-top: 16px;
+  }
+  .main__textarea {
+    margin-right: 48px;
+  }
+  .main__info-pic {
+    border-radius: $border-radius;
+  }
+}
   @media (min-width: 1440px){
   .menu__title {
     position: relative;
@@ -75,9 +82,11 @@
     cursor: pointer;
   }
   .repair__btn--text {
+    font-family: 'TT Lakes';
     margin-right: 10px;
     font-weight: 500;
     font-size: 16px;
+
   }
 }
-}
+
